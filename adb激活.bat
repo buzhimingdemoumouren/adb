@@ -45,6 +45,7 @@
 ::
 ::
 ::978f952a14a936cc963da21a135fa983
+adb install %1
 @ECHO OFF&PUSHD %~DP0 &TITLE adb激活
 
 :menu
@@ -53,7 +54,7 @@ cls
 
 echo.
 
-echo 请选择要激活的adb命令
+echo 请选择要激活的adb命令(拖入apk文件可直接安装）
 
 echo ==============================
 
@@ -138,7 +139,7 @@ if %user_input% equ 10 adb reboot bootloader
 if %user_input% equ 11 adb reboot edl
 
 if %user_input% equ 12 adb shell sh /data/user/0/com.omarea.vtools/files/up.sh
-
+adb install %1
 pause 
 
 goto menu
